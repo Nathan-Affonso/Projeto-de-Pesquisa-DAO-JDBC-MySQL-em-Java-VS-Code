@@ -4,7 +4,7 @@
 O DAO (Data Acess Object) é um padrão que separa o acesso ao banco de dados do restante da aplicação. Ele centraliza operações como inserir, consultar, atualizar e deletar dados, deixando o código mais organizado e fácil de manter. Também melhora a segurança e evita repetição de SQL. Em resumo, torna o sistema mais limpo e estruturado.
 ### Exemplo prático de DAO:
 
-Imagine uma aplicação de cadastro de usuários. No começo, para ser mais rápido, o desenvolvedor colocou os comandos SQL diretamente nas telas e nas classes principais. O sistema funcionava, mas conforme cresceu, ficou difícil de entender, manter e modificar, já que tudo estava misturado. Para resolver isso, foi aplicado o padrão DAO, criando uma classe responsável apenas por acessar o banco de dados. Assim, o restante do sistema passou a apenas chamar métodos dessa classe, deixando tudo mais organizado.
+Imagine uma aplicação de cadastro de usuários. No começo, para ser mais rápido, o desenvolvedor colocou os comandos SQL diretamente nas telas e nas classes principais. O sistema funcionava, mas conforme cresceu, ficou difícil de entender, manter e atualizar, já que tudo estava misturado. Para resolver isso, foi aplicado o padrão DAO, criando uma classe responsável apenas por acessar o banco de dados. Assim, o restante do sistema passou a apenas chamar métodos dessa classe, deixando tudo mais organizado.
 
 ### Antes do DAO
 
