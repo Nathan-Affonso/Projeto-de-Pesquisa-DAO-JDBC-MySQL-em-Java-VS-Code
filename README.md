@@ -47,12 +47,22 @@ Imagine uma aplicação de cadastro de usuários onde é necessário salvar e li
 * Execução organizada de INSERT e SELECT
 * Código mais confiável e fácil de manter
 
+### Ciclo de vida de uma conexão JDBC?
+
+O ciclo de vida de uma conexão JDBC pode ser entendido como o caminho completo que a aplicação percorre desde o momento em que precisa acessar o banco até o encerramento dessa comunicação com o MySQL. 
+
+Depois que a conexão está aberta, a aplicação prepara e envia comandos SQL, como inserir, consultar ou atualizar informações. O JDBC executa esses comandos no banco e, quando necessário, retorna os dados obtidos para o sistema, permitindo que eles sejam usados na aplicação.
+
+Após concluir as operações, chega a etapa final: encerrar a conexão. Isso é essencial para evitar consumo desnecessário de recursos, já que conexões abertas ocupam memória e podem prejudicar o desempenho do sistema.
+
+Resumindo de forma simples, o ciclo segue esta ideia: abrir conexão → executar comandos → receber resultados → fechar conexão. Esse processo garante que a aplicação consiga acessar o banco de forma controlada, eficiente e segura.
+
 
 ## Mas o que é SQL Injection? E PreparedStatement?
 
-O SQL Injection é uma falha de segurança que acontece quando o sistema monta comandos SQL usando diretamente dados digitados pelo usuário na aplicação, permitindo que alguém insira códigos maliciosos e altere o funcionamento da consulta sem ter acesso direto ao banco de dados.
+O **SQL Injection** é uma falha de segurança que acontece quando o sistema monta comandos SQL usando diretamente dados digitados pelo usuário na aplicação, permitindo que alguém insira códigos maliciosos e altere o funcionamento da consulta sem ter acesso direto ao banco de dados.
 
-Já o PreparedStatement é uma forma mais segura e organizada de executar comandos SQL no Java usando JDBC. Em vez de montar a consulta juntando textos (por exemplo, concatenando o que o usuário digitou), você escreve o SQL com parâmetros (?) e depois passa os valores separadamente.
+Já o **PreparedStatement** é uma forma mais segura e organizada de executar comandos SQL no Java usando JDBC. Em vez de montar a consulta juntando textos (por exemplo, concatenando o que o usuário digitou), você escreve o SQL com parâmetros (?) e depois passa os valores separadamente.
 
 Por exemplo, em vez de fazer algo como:
 > "SELECT * FROM usuarios WHERE nome = '" + nome + "'"
