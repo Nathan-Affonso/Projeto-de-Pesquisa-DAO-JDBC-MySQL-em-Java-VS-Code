@@ -71,4 +71,9 @@ Por exemplo, em vez de fazer algo como:
 Você usa: 
 > "SELECT * FROM usuarios WHERE nome = ?"
 
-Pense no PreparedStatement como um jeito mais organizado de “montar uma pergunta” para o banco de dados. Em vez de você escrever a pergunta já com a resposta misturada (juntando tudo como texto), você primeiro monta a estrutura da pergunta com um espaço vazio (?) e depois só preenche esse espaço com o valor que quiser.
+Para melhor entendimento, pense no PreparedStatement como um jeito mais organizado de “montar uma pergunta” para o banco de dados. Em vez de você escrever a pergunta já com a resposta misturada (juntando tudo como texto), você primeiro monta a estrutura da pergunta com um espaço vazio (?) e depois só preenche esse espaço com o valor que quiser.
+
+
+## Mas como posso garantir a qualidade da aplicação?
+
+Para isso, deve ser feito um checklist de qualidade. Um checklist de qualidade em aplicações com JDBC serve para garantir que o acesso ao banco de dados seja feito de forma segura, organizada e sem problemas de desempenho.
