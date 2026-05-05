@@ -5,7 +5,8 @@ O DAO (Data Acess Object) é um padrão que separa o acesso ao banco de dados do
 
 ### Exemplo prático de DAO:
 
-Imagine uma aplicação de cadastro de usuários. No começo, para ser mais rápido, o desenvolvedor colocou os comandos SQL diretamente nas telas e nas classes principais. O sistema funcionava, mas conforme cresceu, ficou difícil de entender, manter e atualizar, já que tudo estava misturado. Para resolver isso, foi aplicado o padrão DAO, criando uma classe responsável apenas por acessar o banco de dados. Assim, o restante do sistema passou a apenas chamar métodos dessa classe, deixando tudo mais organizado.
+Imagine uma aplicação de cadastro de usuários. No começo, para ser mais rápido, o desenvolvedor colocou os comandos SQL diretamente nas telas e nas classes principais. 
+O sistema funcionava, mas conforme cresceu, ficou difícil de entender, manter e atualizar, já que tudo estava misturado. Para resolver isso, foi aplicado o padrão DAO, criando uma classe responsável apenas por acessar o banco de dados. Assim, o restante do sistema passou a apenas chamar métodos dessa classe, deixando tudo mais organizado.
 
 ### Antes do DAO
 
@@ -33,20 +34,6 @@ Para simplificar esta explicação, imagine o JDBC como se fosse um tradutor ent
 
 Imagine uma aplicação de cadastro de usuários onde é necessário salvar e listar dados no banco MySQL. Para isso, o sistema utiliza o JDBC para se conectar ao banco, enviar comandos SQL e receber os resultados. Assim, sempre que um usuário é cadastrado ou consultado, o JDBC faz toda a comunicação entre o Java e o banco.
 
-### Antes (sem uso correto de JDBC)
-
-* Conexões mal gerenciadas (não são fechadas)
-* SQL montado diretamente com texto (risco de erro e **SQL Injection**)
-* Código desorganizado
-* Dificuldade para manter e identificar problemas
-
-### Depois (uso correto de JDBC)
-
-* Conexão aberta e fechada corretamente
-* Uso de **PreparedStatement** para maior segurança
-* Execução organizada de INSERT e SELECT
-* Código mais confiável e fácil de manter
-
 ### Ciclo de vida de uma conexão JDBC?
 
 O ciclo de vida de uma conexão JDBC pode ser entendido como o caminho completo que a aplicação percorre desde o momento em que precisa acessar o banco até o encerramento dessa comunicação com o MySQL. 
@@ -56,6 +43,20 @@ Depois que a conexão está aberta, a aplicação prepara e envia comandos SQL, 
 Após concluir as operações, chega a etapa final: encerrar a conexão. Isso é essencial para evitar consumo desnecessário de recursos, já que conexões abertas ocupam memória e podem prejudicar o desempenho do sistema.
 
 Resumindo de forma simples, o ciclo segue esta ideia: abrir conexão → executar comandos → receber resultados → fechar conexão. Esse processo garante que a aplicação consiga acessar o banco de forma controlada, eficiente e segura.
+
+### Antes (sem uso correto de JDBC)
+
+* Conexões mal gerenciadas (não são fechadas);
+* SQL montado diretamente com texto (risco de erro e **SQL Injection**);
+* Código desorganizado;
+* Dificuldade para manter e identificar problemas.
+
+### Depois (uso correto de JDBC)
+
+* Conexão aberta e fechada corretamente;
+* Uso de **PreparedStatement** para maior segurança;
+* Execução organizada de INSERT e SELECT;
+* Código mais confiável e fácil de manter.
 
 
 ## Mas o que é SQL Injection? E PreparedStatement?
