@@ -59,3 +59,5 @@ Por exemplo, em vez de fazer algo como:
 
 Você usa: 
 > "SELECT * FROM usuarios WHERE nome = ?"
+
+Pense no PreparedStatement como um jeito mais organizado de “montar uma pergunta” para o banco de dados. Em vez de você escrever a pergunta já com a resposta misturada (juntando tudo como texto), você primeiro monta a estrutura da pergunta com um espaço vazio (?) e depois só preenche esse espaço com o valor que quiser.
