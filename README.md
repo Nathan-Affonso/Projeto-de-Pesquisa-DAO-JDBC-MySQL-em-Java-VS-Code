@@ -24,3 +24,5 @@ Imagine uma aplicação de cadastro de usuários. No começo, para ser mais ráp
 
 ## E o que é JDBC?
 O JDBC (Java Database Connectivity) é uma tecnologia do Java que permite que um programa se conecte a um banco de dados, como o MySQL, e realize operações com os dados. Ele funciona como uma ponte entre a aplicação e o banco, possibilitando enviar comandos SQL e receber os resultados dessas operações.
+
+Para simplificar esta explicação, imagine o JDBC como se fosse um tradutor entre o Java e o banco de dados. O seu programa fala “Java”, enquanto o banco (como o MySQL) entende comandos SQL. O JDBC entra no meio justamente para fazer essa comunicação acontecer de forma correta.
