@@ -23,7 +23,7 @@ Imagine uma aplicação de cadastro de usuários. No começo, para ser mais ráp
 * Alterações centralizadas
 * Sistema mais seguro e fácil de evoluir
 
-  
+
 ## E o que é JDBC?
 O JDBC (Java Database Connectivity) é uma tecnologia do Java que permite que um programa se conecte a um banco de dados, como o MySQL, e realize operações com os dados. Ele funciona como uma ponte entre a aplicação e o banco, possibilitando enviar comandos SQL e receber os resultados dessas operações.
 
@@ -47,3 +47,15 @@ Imagine uma aplicação de cadastro de usuários onde é necessário salvar e li
 * Execução organizada de INSERT e SELECT
 * Código mais confiável e fácil de manter
 
+
+## Mas o que é SQL Injection? E PreparedStatement?
+
+O SQL Injection é uma falha de segurança que acontece quando o sistema monta comandos SQL usando diretamente dados digitados pelo usuário na aplicação, permitindo que alguém insira códigos maliciosos e altere o funcionamento da consulta sem ter acesso direto ao banco de dados.
+
+Já o PreparedStatement é uma forma mais segura e organizada de executar comandos SQL no Java usando JDBC. Em vez de montar a consulta juntando textos (por exemplo, concatenando o que o usuário digitou), você escreve o SQL com parâmetros (?) e depois passa os valores separadamente.
+
+Por exemplo, em vez de fazer algo como:
+> "SELECT * FROM usuarios WHERE nome = '" + nome + "'"
+
+Você usa: 
+> "SELECT * FROM usuarios WHERE nome = ?"
