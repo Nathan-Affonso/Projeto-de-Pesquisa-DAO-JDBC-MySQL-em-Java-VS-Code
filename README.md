@@ -77,3 +77,9 @@ Para melhor entendimento, pense no PreparedStatement como um jeito mais organiza
 ## Mas como posso garantir a qualidade da aplicação?
 
 Para isso, deve ser feito um checklist de qualidade. Um checklist de qualidade em aplicações com JDBC serve para garantir que o acesso ao banco de dados seja feito de forma segura, organizada e sem problemas de desempenho.
+
+Um dos pontos mais importantes é o fechamento de recursos. Sempre que o sistema abre uma conexão com o banco, ou utiliza objetos como PreparedStatement e ResultSet, é essencial fechá-los ao final do uso. Se isso não for feito, o sistema pode acumular conexões abertas, consumindo memória e até travando o banco.
+
+Outro ponto fundamental é o tratamento de exceções. Como o acesso ao banco pode falhar (por erro de conexão, SQL inválido, entre outros), o sistema precisa estar preparado para lidar com esses problemas sem travar. Isso significa capturar erros (SQLException), registrar o que aconteceu e, quando necessário, retornar mensagens adequadas ou tomar ações corretivas.
+
+Seguindo esse checklist, o sistema se torna mais confiável, evitando vazamentos de recursos, falhas inesperadas e dificuldades na manutenção.
